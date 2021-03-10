@@ -1,0 +1,22 @@
+<!-- <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"> -->
+<form>
+
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+  
+    <div>
+      <label for="password">
+        Passwort
+      </label>
+      <input id="password" type="text" formControlName="password">
+    </div>
+  
+    <button class="button" type="submit">Login</button>
+  
+  </form>
+
+  <p>Noch kein Konto? <a routerLink="/signup">Jetzt registrieren</a></p>

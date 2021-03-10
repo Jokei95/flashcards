@@ -1,0 +1,26 @@
+
+<div class="scene">
+        <div class="card" [@cardFlip]="data.state">
+            <div *ngIf="!data.finished" class="face back">
+                <span>{{currentCard.answer}}</span>
+                <span>{{currentCard.id}}</span>
+                <button (click)="nextCard('easy')">😏</button>
+                <button (click)="nextCard('medium')">😐</button>
+                <button (click)="nextCard('difficult')">😒</button>
+            </div>
+            <div *ngIf="data.finished" class="face back">
+                <span>😏</span><span>{{resultCounterEasy}}</span><br />
+                <span>😐</span><span>{{resultCounterMedium}}</span><br />
+                <span>😒</span><span>{{resultCounterDifficult}}</span><br />
+                <button (click)="resetStack()">Stapel wiederholen</button>
+                <a class="button" routerLink="/topic/{{stackID}}">Anderer Stapel</a>
+            </div>  
+            <div class="face front" (click)="showAnswer()">
+                <span>{{currentCard.quest}}</span>
+                <span>{{currentCard.id}}</span>
+            </div>
+        </div>  
+</div>
+<div class="cardnav">
+    <a class="button" routerLink="/topic/{{stackID}}">Zurück</a>
+</div>
